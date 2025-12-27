@@ -6,12 +6,11 @@
     <div class="absolute bottom-20 right-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
   </div>
 
-  <div class="relative z-10 flex items-center min-h-[90vh]">
+  <div class="relative z-10 flex items-center min-h-[90vh] xs:h-full">
     <div class="w-full">
       <div class="ml-4 sm:ml-6 lg:ml-8 xl:ml-12">
         <div class="p-6 sm:p-8 lg:p-10">
           <div class="flex flex-col gap-6 sm:gap-8">
-              <!-- Фото -->
               <div class="flex flex-row xs:flex-col gap-6 items-center">
               <div class="flex-shrink-0 animate-slide-in-left">
                 <div class="w-32 h-32 xs:w-48 xs:h-48 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-2xl overflow-hidden border-2 border-green-800/50 bg-gradient-to-br from-green-950 to-emerald-950 flex items-center justify-center">
@@ -21,11 +20,12 @@
                     :alt="profileData.fullName"
                     class="w-full h-full object-cover"
                   />
-                  <div v-else class="text-6xl sm:text-7xl lg:text-8xl">👤</div>
+                  <div v-else class="text-6xl sm:text-7xl lg:text-8xl flex items-center justify-center">
+                    <img src="/src/images/user.png" alt="user" class="w-[60%] object-cover" />
+                  </div>
                 </div>
               </div>
 
-              <!-- Информация -->
                 <div class="xs:text-center">
                   <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">
                     <span class="text-gradient">{{ profileData.fullName }}</span>
@@ -40,48 +40,60 @@
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 sm:max-w-[600px] gap-4 pt-4 border-t border-green-800/30">
-                  <div class="flex items-start gap-3">
-                    <span class="text-green-400 text-xl flex-shrink-0">📍</span>
+                  <div class="flex items-center gap-3">
+                    <span class="text-green-400 text-xl flex-shrink-0 flex items-center justify-center">
+                      <img src="/src/images/location.png" class="w-8 h-8 object-cover" />
+                    </span>
                     <div>
                       <p class="text-gray-400 text-xs sm:text-sm mb-1">Город</p>
                       <p class="text-gray-200 text-sm sm:text-base">{{ profileData.city }}</p>
                     </div>
                   </div>
 
-                  <div class="flex items-start gap-3">
-                    <span class="text-green-400 text-xl flex-shrink-0">🎂</span>
+                  <div class="flex items-center gap-3">
+                    <span class="text-green-400 text-xl flex-shrink-0">
+                      <img src="/src/images/calendar.png" class="w-8 h-8 object-cover" />
+                    </span>
                     <div>
                       <p class="text-gray-400 text-xs sm:text-sm mb-1">Дата рождения</p>
                       <p class="text-gray-200 text-sm sm:text-base">{{ profileData.birthDate }}</p>
                     </div>
                   </div>
 
-                  <div class="flex items-start gap-3">
-                    <span class="text-green-400 text-xl flex-shrink-0">💼</span>
+                  <div class="flex items-center gap-3">
+                    <span class="text-green-400 text-xl flex-shrink-0">
+                      <img src="/src/images/briefcase.png" class="w-8 h-8 object-cover" />
+                    </span>
                     <div>
                       <p class="text-gray-400 text-xs sm:text-sm mb-1">Желаемая должность</p>
                       <p class="text-gray-200 text-sm sm:text-base">{{ profileData.desiredPosition }}</p>
                     </div>
                   </div>
 
-                  <div class="flex items-start gap-3">
-                    <span class="text-green-400 text-xl flex-shrink-0">🌐</span>
+                  <div class="flex items-center gap-3">
+                    <span class="text-green-400 text-xl flex-shrink-0">
+                      <img src="/src/images/online.png" class="w-8 h-8 object-cover" />
+                    </span>
                     <div>
                       <p class="text-gray-400 text-xs sm:text-sm mb-1">Формат работы</p>
                       <p class="text-gray-200 text-sm sm:text-base">{{ profileData.workFormat }}</p>
                     </div>
                   </div>
 
-                  <div class="flex items-start gap-3">
-                    <span class="text-green-400 text-xl flex-shrink-0">🔍</span>
+                  <div class="flex items-center gap-3">
+                    <span class="text-green-400 text-xl flex-shrink-0">
+                      <img src="/src/images/magnifying-glass.png" class="w-8 h-8 object-cover" />
+                    </span>
                     <div>
                       <p class="text-gray-400 text-xs sm:text-sm mb-1">Статус поиска</p>
                       <p class="text-gray-200 text-sm sm:text-base">{{ profileData.jobSearchStatus }}</p>
                     </div>
                   </div>
 
-                  <div class="flex items-start gap-3">
-                    <span class="text-green-400 text-xl flex-shrink-0">🎓</span>
+                  <div class="flex items-center gap-3">
+                    <span class="text-green-400 text-xl flex-shrink-0">
+                      <img src="/src/images/university.png" class="w-8 h-8 object-cover" />
+                    </span>
                     <div>
                       <p class="text-gray-400 text-xs sm:text-sm mb-1">Образование</p>
                       <p class="text-gray-200 text-sm sm:text-base">{{ profileData.education }}</p>
@@ -93,7 +105,7 @@
         </div>
         </div>
       </div>
-      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce xs:hidden">
         <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
@@ -131,12 +143,23 @@
             class="bg-gradient-to-br from-black to-green-950/50 border border-green-800/50 p-6 space-y-6 rounded-2xl shadow-2xl hover-glow animate-slide-up"
             :style="`animation-delay: ${index * 0.1}s`"
           >
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-green-950 to-emerald-950 rounded-lg flex items-center justify-center mr-4">
-                <span class="text-2xl">{{ skill.icon }}</span>
-              </div>
-              <h3 class="text-xl font-semibold">{{ skill.title }}</h3>
+          <div class="flex items-center mb-4">
+            <div
+              class="w-12 h-12 min-w-12 min-h-12
+                     flex-shrink-0
+                     bg-gradient-to-br from-green-950 to-emerald-950
+                     rounded-lg flex items-center justify-center mr-4"
+            >
+              <img
+                :src="skill.icon"
+                alt=""
+                class="w-[60%] h-[60%] object-contain opacity-70"
+              />
             </div>
+            <h3 class="text-xl font-semibold leading-snug">
+              {{ skill.title }}
+            </h3>
+          </div>
             <p class="text-gray-400">{{ skill.description }}</p>
           </div>
         </div>
@@ -184,7 +207,13 @@
           >
             <div class="flex flex-col items-center text-center">
               <div class="w-16 h-16 bg-gradient-to-br from-green-950 to-emerald-950 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <span class="text-3xl">{{ contact.icon }}</span>
+                <span class="text-3xl flex items-center justify-center">
+                  <img
+                :src="contact.icon"
+                alt=""
+                class="w-[60%] h-[60%] object-contain opacity-70"
+              />
+                </span>
               </div>
               <h3 class="text-lg font-semibold mb-2">{{ contact.title }}</h3>
               <p class="text-gray-400 text-sm break-all">{{ contact.value }}</p>
@@ -215,47 +244,47 @@ const profileData = ref({
   workFormat: 'Удаленная работа',
   jobSearchStatus: 'Активно ищу работу',
   education: 'Дагестанский Государственный Университет, 2 курс',
-  photo: null // Путь к фото, если есть
+  photo: '/src/images/profile.jpg' 
 })
 
 const skills = ref([
   {
-    icon: '🔍',
+    icon: '/src/images/cybersecurity.png',
     title: 'База',
     description: 'Основы информационной безопасности, модели угроз, OWASP Top 10'
   },
   {
-    icon: '🛡️',
+    icon: '/src/images/monitoring.png',
     title: 'Мониторинг безопасности',
     description: 'Понимание принципов работы SIEM (Splunk, Elastic)'
   },
   {
-    icon: '📊',
+    icon: '/src/images/linux.png',
     title: 'ОС',
     description: 'Администрирование Linux, Windows'
   },
   {
-    icon: '🔐',
+    icon: '/src/images/network.png',
     title: 'Основы сетевой безопасности',
     description: 'базовые знания TCP/IP, модели OSI, VPN, firewall, прокси'
   },
   {
-    icon: '💻',
+    icon: '/src/images/analyze.png',
     title: 'Анализ логов',
     description: 'Логи ОС, сетевого оборудования, средств защиты (антивирусов, IDS/IPS)'
   },
   {
-    icon: '📚',
+    icon: '/src/images/code.png',
     title: 'Скрипты',
     description: 'Bash / Python / PowerShell (чтение чужих скриптов, простые скрипты, автоматизация задач)'
   },
   {
-    icon: '📚',
+    icon: '/src/images/english.png',
     title: 'Английский язык',
     description: 'Технический, для чтения документации'
   },
   {
-    icon: '📚',
+    icon: '/src/images/head-profile.png',
     title: 'Личные качества',
     description: 'Обучаемость, стрессоустойчивость, работа в команде'
   }
@@ -288,19 +317,19 @@ const experience = ref([
 
 const contacts = ref([
   {
-    icon: '📧',
+    icon: '/src/images/email.png',
     title: 'Email',
     value: 'magnus.bat@mail.ru',
     link: 'mailto:magnus.bat@mail.ru'
   },
   {
-    icon: '📱',
+    icon: '/src/images/telegram.png',
     title: 'Telegram',
     value: '@mimexx',
     link: 'https://t.me/mimexx'
   },
   {
-    icon: '☎️',
+    icon: '/src/images/phone.png',
     title: 'Телефон',
     value: '+7 (989) 449-29-08',
     link: 'tel:+79894492908'
