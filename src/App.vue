@@ -1,23 +1,98 @@
 <template>
   <div class="min-h-screen bg-black text-white">
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-400/5 rounded-full blur-3xl"></div>
-      </div>
+    <section class="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden h-screen">
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
+  </div>
 
-      <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-        <div class="mb-6 animate-slide-up" style="animation-delay: 0.2s;">
-          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
-            <span class="text-gradient">SOC L1 Аналитик</span>
-          </h1>
+  <div class="relative z-10 flex items-center min-h-[90vh]">
+    <div class="w-full">
+      <div class="ml-4 sm:ml-6 lg:ml-8 xl:ml-12">
+        <div class="p-6 sm:p-8 lg:p-10">
+          <div class="flex flex-col gap-6 sm:gap-8">
+              <!-- Фото -->
+              <div class="flex flex-row xs:flex-col gap-6 items-center">
+              <div class="flex-shrink-0 animate-slide-in-left">
+                <div class="w-32 h-32 xs:w-48 xs:h-48 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-2xl overflow-hidden border-2 border-green-800/50 bg-gradient-to-br from-green-950 to-emerald-950 flex items-center justify-center">
+                  <img 
+                    v-if="profileData.photo" 
+                    :src="profileData.photo" 
+                    :alt="profileData.fullName"
+                    class="w-full h-full object-cover"
+                  />
+                  <div v-else class="text-6xl sm:text-7xl lg:text-8xl">👤</div>
+                </div>
+              </div>
+
+              <!-- Информация -->
+                <div class="xs:text-center">
+                  <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">
+                    <span class="text-gradient">{{ profileData.fullName }}</span>
+                  </h1>
+                  <p class="text-xl sm:text-2xl text-green-400 font-semibold mb-1">
+                    {{ profileData.position }}
+                  </p>
+                  <p class="text-gray-400 text-sm sm:text-base">
+                    {{ profileData.status }}
+                  </p>
+                </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 sm:max-w-[600px] gap-4 pt-4 border-t border-green-800/30">
+                  <div class="flex items-start gap-3">
+                    <span class="text-green-400 text-xl flex-shrink-0">📍</span>
+                    <div>
+                      <p class="text-gray-400 text-xs sm:text-sm mb-1">Город</p>
+                      <p class="text-gray-200 text-sm sm:text-base">{{ profileData.city }}</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3">
+                    <span class="text-green-400 text-xl flex-shrink-0">🎂</span>
+                    <div>
+                      <p class="text-gray-400 text-xs sm:text-sm mb-1">Дата рождения</p>
+                      <p class="text-gray-200 text-sm sm:text-base">{{ profileData.birthDate }}</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3">
+                    <span class="text-green-400 text-xl flex-shrink-0">💼</span>
+                    <div>
+                      <p class="text-gray-400 text-xs sm:text-sm mb-1">Желаемая должность</p>
+                      <p class="text-gray-200 text-sm sm:text-base">{{ profileData.desiredPosition }}</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3">
+                    <span class="text-green-400 text-xl flex-shrink-0">🌐</span>
+                    <div>
+                      <p class="text-gray-400 text-xs sm:text-sm mb-1">Формат работы</p>
+                      <p class="text-gray-200 text-sm sm:text-base">{{ profileData.workFormat }}</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3">
+                    <span class="text-green-400 text-xl flex-shrink-0">🔍</span>
+                    <div>
+                      <p class="text-gray-400 text-xs sm:text-sm mb-1">Статус поиска</p>
+                      <p class="text-gray-200 text-sm sm:text-base">{{ profileData.jobSearchStatus }}</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3">
+                    <span class="text-green-400 text-xl flex-shrink-0">🎓</span>
+                    <div>
+                      <p class="text-gray-400 text-xs sm:text-sm mb-1">Образование</p>
+                      <p class="text-gray-200 text-sm sm:text-base">{{ profileData.education }}</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto animate-slide-up" style="animation-delay: 0.4s;">
-          Начинающий специалист по кибербезопасности
-        </p>
+        </div>
       </div>
-
       <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
@@ -26,7 +101,7 @@
     </section>
 
     <section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
-      <div class="container mx-auto max-w-4xl">
+      <div class="container mx-auto max-w-6xl">
         <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center animate-slide-in-left">
           <span class="text-gradient">О себе</span>
         </h2>
@@ -69,7 +144,7 @@
     </section>
 
     <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8">
-      <div class="container mx-auto max-w-4xl">
+      <div class="container mx-auto max-w-6xl">
         <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center animate-slide-in-left">
           <span class="text-gradient">Опыт и образование</span>
         </h2>
@@ -93,7 +168,7 @@
     </section>
 
     <section id="contacts" class="py-20 px-4 sm:px-6 lg:px-8">
-      <div class="container mx-auto max-w-4xl">
+      <div class="container mx-auto max-w-6xl">
         <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center animate-slide-in-right">
           <span class="text-gradient">Контакты</span>
         </h2>
@@ -129,6 +204,19 @@
 
 <script setup>
 import { ref } from 'vue'
+
+const profileData = ref({
+  fullName: 'Магомедова Амина',
+  position: 'SOC L1 Аналитик',
+  status: 'Начинающий специалист по кибербезопасности',
+  city: 'Махачкала',
+  birthDate: '08.05.2007',
+  desiredPosition: 'SOC L1 Аналитик',
+  workFormat: 'Удаленная работа',
+  jobSearchStatus: 'Активно ищу работу',
+  education: 'Дагестанский Государственный Университет, 2 курс',
+  photo: null // Путь к фото, если есть
+})
 
 const skills = ref([
   {
