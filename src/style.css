@@ -14,15 +14,15 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-green-400 to-emerald-700 bg-clip-text text-transparent;
   }
   
   .glow-effect {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 20px rgba(94, 255, 0, 0.192);
   }
   
   .hover-glow:hover {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 30px rgba(94, 255, 0, 0.192);
     transition: box-shadow 0.3s ease;
   }
 }

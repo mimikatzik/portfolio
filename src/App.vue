@@ -2,9 +2,9 @@
   <div class="min-h-screen bg-black text-white">
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-400/5 rounded-full blur-3xl"></div>
       </div>
 
       <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
@@ -30,7 +30,7 @@
         <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center animate-slide-in-left">
           <span class="text-gradient">О себе</span>
         </h2>
-        <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 md:p-10 border border-gray-800 hover-glow animate-slide-up">
+        <div class="bg-gradient-to-br from-black to-green-950/50 border border-green-800/50 p-9 space-y-6 rounded-2xl shadow-2xl hover-glow animate-slide-up">
           <p class="text-gray-300 text-lg leading-relaxed mb-6">
             Начинающий аналитик SOC L1, ориентированный на мониторинг и первичный анализ инцидентов информационной безопасности. Имею практический опыт работы с логами, SIEM (Splunk, Elastic Stack), IDS/IPS (Snort), а также анализа сетевого трафика с использованием Wireshark. Уверенный пользователь ОС Linux и Windows, понимаю сетевые протоколы и типовые сценарии атак.
           </p>
@@ -44,7 +44,7 @@
       </div>
     </section>
 
-    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-950/50">
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8">
       <div class="container mx-auto max-w-6xl">
         <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center animate-slide-in-right">
           <span class="text-gradient">Навыки</span>
@@ -53,11 +53,11 @@
           <div 
             v-for="(skill, index) in skills" 
             :key="index"
-            class="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800 hover:border-cyan-500/50 transition-all duration-300 hover-glow animate-slide-up"
+            class="bg-gradient-to-br from-black to-green-950/50 border border-green-800/50 p-6 space-y-6 rounded-2xl shadow-2xl hover-glow animate-slide-up"
             :style="`animation-delay: ${index * 0.1}s`"
           >
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center mr-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-green-950 to-emerald-950 rounded-lg flex items-center justify-center mr-4">
                 <span class="text-2xl">{{ skill.icon }}</span>
               </div>
               <h3 class="text-xl font-semibold">{{ skill.title }}</h3>
@@ -77,11 +77,11 @@
           <div 
             v-for="(item, index) in experience" 
             :key="index"
-            class="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-gray-800 hover-glow animate-slide-up"
+            class="bg-gradient-to-br from-black to-green-950/50 border border-green-800/50 p-9 space-y-6 rounded-2xl shadow-2xl hover-glow animate-slide-up"
             :style="`animation-delay: ${index * 0.15}s`"
           >
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-              <h3 class="text-xl sm:text-2xl font-semibold text-cyan-400 mb-2 sm:mb-0">{{ item.title }}</h3>
+              <h3 class="text-xl sm:text-2xl font-semibold text-green-400 mb-2 sm:mb-0">{{ item.title }}</h3>
             </div>
             <p class="text-gray-300 mb-3">{{ item.organization }}</p>
             <ul class="list-disc list-inside space-y-2 text-gray-400">
@@ -92,7 +92,7 @@
       </div>
     </section>
 
-    <section id="contacts" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-950/50">
+    <section id="contacts" class="py-20 px-4 sm:px-6 lg:px-8">
       <div class="container mx-auto max-w-4xl">
         <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center animate-slide-in-right">
           <span class="text-gradient">Контакты</span>
@@ -104,11 +104,11 @@
             :href="contact.link"
             target="_blank"
             rel="noopener noreferrer"
-            class="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800 hover:border-cyan-500/50 transition-all duration-300 hover-glow group animate-slide-up"
+            class="bg-gradient-to-br from-black to-green-950/50 border border-green-800/50 p-6 space-y-6 rounded-2xl shadow-2xl hover-glow animate-slide-up"
             :style="`animation-delay: ${index * 0.1}s`"
           >
             <div class="flex flex-col items-center text-center">
-              <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div class="w-16 h-16 bg-gradient-to-br from-green-950 to-emerald-950 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <span class="text-3xl">{{ contact.icon }}</span>
               </div>
               <h3 class="text-lg font-semibold mb-2">{{ contact.title }}</h3>
