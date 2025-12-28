@@ -21,7 +21,7 @@
                     class="w-full h-full object-cover"
                   />
                   <div v-else class="text-6xl sm:text-7xl lg:text-8xl flex items-center justify-center">
-                    <img src="./images/user.png" alt="user" class="w-[60%] object-cover" />
+                    <img src="/images/user.png" alt="user" class="w-[60%] object-cover" />
                   </div>
                 </div>
               </div>
@@ -42,7 +42,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 sm:max-w-[600px] gap-4 pt-4 border-t border-green-800/30">
                   <div class="flex items-center gap-3">
                     <span class="text-green-400 text-xl flex-shrink-0 flex items-center justify-center">
-                      <img src="./images/location.png" class="w-8 h-8 object-cover" />
+                      <img src="/images/location.png" class="w-8 h-8 object-cover" />
                     </span>
                     <div>
                       <p class="text-gray-400 text-xs sm:text-sm mb-1">Город</p>
@@ -52,7 +52,7 @@
 
                   <div class="flex items-center gap-3">
                     <span class="text-green-400 text-xl flex-shrink-0">
-                      <img src="./images/calendar.png" class="w-8 h-8 object-cover" />
+                      <img src="/images/calendar.png" class="w-8 h-8 object-cover" />
                     </span>
                     <div>
                       <p class="text-gray-400 text-xs sm:text-sm mb-1">Дата рождения</p>
@@ -62,7 +62,7 @@
 
                   <div class="flex items-center gap-3">
                     <span class="text-green-400 text-xl flex-shrink-0">
-                      <img src="./images/briefcase.png" class="w-8 h-8 object-cover" />
+                      <img src="/images/briefcase.png" class="w-8 h-8 object-cover" />
                     </span>
                     <div>
                       <p class="text-gray-400 text-xs sm:text-sm mb-1">Желаемая должность</p>
@@ -72,7 +72,7 @@
 
                   <div class="flex items-center gap-3">
                     <span class="text-green-400 text-xl flex-shrink-0">
-                      <img src="./images/online.png" class="w-8 h-8 object-cover" />
+                      <img src="/images/online.png" class="w-8 h-8 object-cover" />
                     </span>
                     <div>
                       <p class="text-gray-400 text-xs sm:text-sm mb-1">Формат работы</p>
@@ -82,7 +82,7 @@
 
                   <div class="flex items-center gap-3">
                     <span class="text-green-400 text-xl flex-shrink-0">
-                      <img src="./images/magnifying-glass.png" class="w-8 h-8 object-cover" />
+                      <img src="/images/magnifying-glass.png" class="w-8 h-8 object-cover" />
                     </span>
                     <div>
                       <p class="text-gray-400 text-xs sm:text-sm mb-1">Статус поиска</p>
@@ -92,7 +92,7 @@
 
                   <div class="flex items-center gap-3">
                     <span class="text-green-400 text-xl flex-shrink-0">
-                      <img src="./images/university.png" class="w-8 h-8 object-cover" />
+                      <img src="/images/university.png" class="w-8 h-8 object-cover" />
                     </span>
                     <div>
                       <p class="text-gray-400 text-xs sm:text-sm mb-1">Образование</p>
@@ -244,47 +244,47 @@ const profileData = ref({
   workFormat: 'Удаленная работа',
   jobSearchStatus: 'Активно ищу работу',
   education: 'Дагестанский Государственный Университет, 2 курс',
-  photo: './src/images/profile.jpg' 
+  photo: '/images/profile.jpg' 
 })
 
 const skills = ref([
   {
-    icon: './src/images/cybersecurity.png',
+    icon: '/images/cybersecurity.png',
     title: 'База',
     description: 'Основы информационной безопасности, модели угроз, OWASP Top 10'
   },
   {
-    icon: './src/images/monitoring.png',
+    icon: '/images/monitoring.png',
     title: 'Мониторинг безопасности',
     description: 'Понимание принципов работы SIEM (Splunk, Elastic)'
   },
   {
-    icon: './src/images/linux.png',
+    icon: '/images/linux.png',
     title: 'ОС',
     description: 'Администрирование Linux, Windows'
   },
   {
-    icon: './src/images/network.png',
+    icon: '/images/network.png',
     title: 'Основы сетевой безопасности',
     description: 'базовые знания TCP/IP, модели OSI, VPN, firewall, прокси'
   },
   {
-    icon: './src/images/analyze.png',
+    icon: '/images/analyze.png',
     title: 'Анализ логов',
     description: 'Логи ОС, сетевого оборудования, средств защиты (антивирусов, IDS/IPS)'
   },
   {
-    icon: './src/images/code.png',
+    icon: '/images/code.png',
     title: 'Скрипты',
     description: 'Bash / Python / PowerShell (чтение чужих скриптов, простые скрипты, автоматизация задач)'
   },
   {
-    icon: './src/images/english.png',
+    icon: '/images/english.png',
     title: 'Английский язык',
     description: 'Технический, для чтения документации'
   },
   {
-    icon: './src/images/head-profile.png',
+    icon: '/images/head-profile.png',
     title: 'Личные качества',
     description: 'Обучаемость, стрессоустойчивость, работа в команде'
   }
@@ -317,19 +317,19 @@ const experience = ref([
 
 const contacts = ref([
   {
-    icon: './src/images/email.png',
+    icon: '/images/email.png',
     title: 'Email',
     value: 'magnus.bat@mail.ru',
     link: 'mailto:magnus.bat@mail.ru'
   },
   {
-    icon: './src/images/telegram.png',
+    icon: '/images/telegram.png',
     title: 'Telegram',
     value: '@mimexx',
     link: 'https://t.me/mimexx'
   },
   {
-    icon: './src/images/phone.png',
+    icon: '/images/phone.png',
     title: 'Телефон',
     value: '+7 (989) 449-29-08',
     link: 'tel:+79894492908'
