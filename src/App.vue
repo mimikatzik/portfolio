@@ -244,47 +244,47 @@ const profileData = ref({
   workFormat: 'Удаленная работа',
   jobSearchStatus: 'Активно ищу работу',
   education: 'Дагестанский Государственный Университет, 2 курс',
-  photo: './images/profile.jpg' 
+  photo: './src/images/profile.jpg' 
 })
 
 const skills = ref([
   {
-    icon: './images/cybersecurity.png',
+    icon: './src/images/cybersecurity.png',
     title: 'База',
     description: 'Основы информационной безопасности, модели угроз, OWASP Top 10'
   },
   {
-    icon: './images/monitoring.png',
+    icon: './src/images/monitoring.png',
     title: 'Мониторинг безопасности',
     description: 'Понимание принципов работы SIEM (Splunk, Elastic)'
   },
   {
-    icon: './images/linux.png',
+    icon: './src/images/linux.png',
     title: 'ОС',
     description: 'Администрирование Linux, Windows'
   },
   {
-    icon: './images/network.png',
+    icon: './src/images/network.png',
     title: 'Основы сетевой безопасности',
     description: 'базовые знания TCP/IP, модели OSI, VPN, firewall, прокси'
   },
   {
-    icon: './images/analyze.png',
+    icon: './src/images/analyze.png',
     title: 'Анализ логов',
     description: 'Логи ОС, сетевого оборудования, средств защиты (антивирусов, IDS/IPS)'
   },
   {
-    icon: './images/code.png',
+    icon: './src/images/code.png',
     title: 'Скрипты',
     description: 'Bash / Python / PowerShell (чтение чужих скриптов, простые скрипты, автоматизация задач)'
   },
   {
-    icon: './images/english.png',
+    icon: './src/images/english.png',
     title: 'Английский язык',
     description: 'Технический, для чтения документации'
   },
   {
-    icon: './images/head-profile.png',
+    icon: './src/images/head-profile.png',
     title: 'Личные качества',
     description: 'Обучаемость, стрессоустойчивость, работа в команде'
   }
@@ -317,19 +317,19 @@ const experience = ref([
 
 const contacts = ref([
   {
-    icon: './images/email.png',
+    icon: './src/images/email.png',
     title: 'Email',
     value: 'magnus.bat@mail.ru',
     link: 'mailto:magnus.bat@mail.ru'
   },
   {
-    icon: './images/telegram.png',
+    icon: './src/images/telegram.png',
     title: 'Telegram',
     value: '@mimexx',
     link: 'https://t.me/mimexx'
   },
   {
-    icon: './images/phone.png',
+    icon: './src/images/phone.png',
     title: 'Телефон',
     value: '+7 (989) 449-29-08',
     link: 'tel:+79894492908'
